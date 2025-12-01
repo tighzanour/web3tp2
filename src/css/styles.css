@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: Knewave;
+  font-size: 26px;
+  background: rgb(65, 52, 34);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 168, 40);
+  border-radius: 50%;
+}
+
+.counter {
+  position: fixed;
+  color: rgb(65, 52, 34);
+  font-weight: bold;
+}
