@@ -45,6 +45,7 @@ body {
   height: 100%;
   border: 1px solid red;
   border-radius: 5px;
+  background-color: #11111180;
 }
 
 #canvasgraph {
@@ -58,11 +59,36 @@ body {
   border-radius: 3%;
 }
 
-.fps {
-  grid-column: 3;
-  grid-row: 1;
+.music {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px 30px;
   border: 1px solid red;
-  border-radius: 3%;
+  border-radius: 10px;
+  background-color: #11111180;
+}
+
+.music button {
+  background: black;
+  color: red; 
+  border: 2px solid red;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.music button:hover {
+  background: red;
+  color: black;
+  transform: scale(1.08);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.541);
 }
 
 .map {
@@ -72,7 +98,8 @@ body {
   border-radius: 3%;
   height: 100%;
   width: 100%;
-  position: relative;
+  background-color: #11111180;
+
 }
 
 #carte {
@@ -86,6 +113,7 @@ body {
   grid-row: 3;
   border: 1px solid red;
   border-radius: 3%;
+  background-color: #11111180;
 }
 
 .zdog-canvas {

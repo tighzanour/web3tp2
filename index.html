@@ -15,7 +15,9 @@
             "animejs": "./node_modules/animejs/dist/bundles/anime.esm.min.js",
             "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js",
             "maplibre-gl": "https://esm.sh/maplibre-gl@5.13.0",
-            "zzz": "https://esm.sh/zdog"
+            "zzz": "https://esm.sh/zdog",
+            "tone.js": "https://esm.sh/tone@15.1.22"
+            
             
           }
         }
@@ -26,6 +28,7 @@
     <script src="./src/js/animejs.js" type="module"></script>
     <script src="./src/js/maplibre.js" type="module"></script>
     <script src="./src/js/zdog.js" type="module"></script>
+    <script src="./src/js/tonejs.js" type="module"></script>
  
 </head>
 <!--grille-->
@@ -42,7 +45,11 @@
     </div>
     <div class="data">DATA</div>
 
-    <div class="fps">FPS</div>
+    <div class="music">
+      <button id="play"><i class="bi bi-play-fill"></i></button>
+      <button id="stop"><i class="bi bi-stop-fill"></i></button>
+    </div>
+
     <div class="map" id="carte">MAP</div>
     <div class="visualizer">
       <canvas class="zdog-canvas"></canvas>
