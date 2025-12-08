@@ -110,3 +110,123 @@ updateProgress();
 //__________
 
 // module crypto
+const cryptoDiv = document.querySelector(".crypto");
+
+const txContainer = document.createElement("div");
+txContainer.classList.add("transactions-container");
+cryptoDiv.appendChild(txContainer);
+
+const cryptoSymbols = ["BTC", "ETH", "SOL", "ADA", "DOGE"];
+let cryptoTransactions = [];
+
+function addCryptoTransaction() {
+  const symbol = cryptoSymbols[Math.floor(Math.random() * cryptoSymbols.length)];
+  const amount = (Math.random() * 1000).toFixed(2);
+  const gain = Math.random() < 0.7;
+  cryptoTransactions.push({ symbol, amount, gain });
+
+  if (cryptoTransactions.length > 6) cryptoTransactions.shift();
+
+  renderCryptoTransactions();
+}
+
+function renderCryptoTransactions() {
+  txContainer.innerHTML = "暗号資産";
+  cryptoTransactions.forEach((tx) => {
+    const txSpan = document.createElement("span");
+    txSpan.textContent = `${tx.symbol}: ${tx.gain ? "+" : "-"}${tx.amount}`;
+    txSpan.style.color = tx.gain ? "white" : "red";
+    txContainer.appendChild(txSpan);
+  });
+}
+
+// boucle rapide
+setInterval(addCryptoTransaction, 100);
+
+const balanceEl = document.getElementById("balance");
+
+let balance = 100;
+
+function updateBalance() {
+  const up = Math.random() < 0.8;
+  const variation = Math.floor(Math.random() * 145000) + 5000;
+
+  balance += up ? variation : -variation;
+  if (balance < 0) balance = 0;
+
+  balanceEl.textContent = `$${balance.toLocaleString()}`;
+}
+setInterval(updateBalance, 50);
+
+// lignes rouges
+const linkCanvas = document.getElementById("links");
+const lctx = linkCanvas.getContext("2d");
+
+function resizeLinks() {
+  linkCanvas.width = window.innerWidth;
+  linkCanvas.height = window.innerHeight;
+}
+resizeLinks();
+window.addEventListener("resize", resizeLinks);
+const moduleSelectors = [".crypto", ".balance", ".graph", ".map", ".data", ".visualizer"];
+
+function getCenterRect(el) {
+  const r = el.getBoundingClientRect();
+  return {
+    x: r.left + r.width / 2,
+    y: r.top + r.height / 2,
+  };
+}
+
+function drawModuleLinks() {
+  lctx.clearRect(0, 0, linkCanvas.width, linkCanvas.height);
+  lctx.strokeStyle = "rgba(255,0,0,0.7)";
+  lctx.lineWidth = 1;
+
+  const modules = moduleSelectors.map((sel) => document.querySelector(sel)).filter((el) => el !== null);
+
+  lctx.beginPath();
+
+  for (let i = 0; i < modules.length - 1; i++) {
+    const a = getCenterRect(modules[i]);
+    const b = getCenterRect(modules[i + 1]);
+
+    lctx.moveTo(a.x, a.y);
+    lctx.lineTo(b.x, b.y);
+  }
+
+  lctx.stroke();
+}
+
+function animateLinks() {
+  drawModuleLinks();
+  requestAnimationFrame(animateLinks);
+}
+animateLinks();
+
+// curseur
+const cursor = document.getElementById("cursor");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let cursorX = 0;
+let cursorY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// smooth
+function animateCursor() {
+  cursorX += (mouseX - cursorX) * 0.06;
+  cursorY += (mouseY - cursorY) * 0.06;
+
+  cursor.style.left = cursorX + "px";
+  cursor.style.top = cursorY + "px";
+
+  requestAnimationFrame(animateCursor);
+}
+
+animateCursor();

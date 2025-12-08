@@ -32,16 +32,21 @@
   <!--grille-->
   <body class="bg-dark text-white">
     <div class="grille">
-      <div class="crypto text-center">CRYPTO</div>
-      <div class="stocks text-center">STOCKS</div>
+      <div class="crypto text-center">
+        <i class="bi bi-currency-bitcoin"></i>
+        <div class="crypto-transactions"></div>
+      </div>
+      <div class="cat text-center">
+        <img src="./assets/img/minou.jpg" draggable="false" class="img-fluid" />
+      </div>
 
-      <div class="balance text-center">BALANCE</div>
-      <div class="graph">
-        GRAPH
+      <div id="balance" class="balance text-center">welcome</div>
+      <div class="graph text-center">
+        <h5>グラフ</h5>
         <canvas id="canvasgraph" class="canvas"></canvas>
       </div>
       <div class="data text-center">
-        DATA
+        <h5>データ</h5>
         <div class="progress-bar"></div>
         <span class="percent">0%</span>
       </div>
@@ -57,6 +62,8 @@
 
       <!--ajouts esthétiques-->
       <canvas id="matrix-bg"></canvas>
+      <canvas id="links"></canvas>
+      <canvas id="cursor"></canvas>
     </div>
   </body>
 </html>
