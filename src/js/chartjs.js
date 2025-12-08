@@ -20,10 +20,10 @@ let graphique = new Chart(document.querySelector("canvas").getContext("2d"), {
   data: {
     datasets: [
       {
-        label: "USD",
+        label: "PROFIT",
         data: series,
         borderWidth: 1.5,
-        tension: 0.1,
+        tension: 0.2,
         pointRadius: 0,
         fill: true,
         borderColor: "rgba(255, 4, 0, 1)",
@@ -101,9 +101,9 @@ setInterval(() => {
 for (let ds of graphique.data.datasets) {
 for (let i = 0; i < ds.data.length; i++) {
 const currentY = parseFloat(ds.data[i].y);
-const random = Math.round(Math.random() * 1 - 0.0001);
+const random = Math.round(Math.random() * 10000 - 5);
 ds.data[i].y = Math.max(0, currentY + random);
 }
 }
 graphique.update();
-}, 80);
+}, 100);
