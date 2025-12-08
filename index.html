@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tp2</title>
-   <!--  connections modules--> 
-    <link rel="stylesheet" href="./src/css/styles.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.css"/>
+    <!--  connections modules-->
+    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.css" />
     <script type="importmap">
-        {
-          "imports": {
-            "animejs": "./node_modules/animejs/dist/bundles/anime.esm.min.js",
-            "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js",
-            "maplibre-gl": "https://esm.sh/maplibre-gl@5.13.0",
-            "zzz": "https://esm.sh/zdog",
-            "tone.js": "https://esm.sh/tone@15.1.22"
-            
-            
-          }
+      {
+        "imports": {
+          "animejs": "./node_modules/animejs/dist/bundles/anime.esm.min.js",
+          "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js",
+          "maplibre-gl": "https://esm.sh/maplibre-gl@5.13.0",
+          "zzz": "https://esm.sh/zdog",
+          "tone.js": "https://esm.sh/tone@15.1.22"
         }
+      }
     </script>
-    
+
     <script src="./src/js/chartjs.js" type="module"></script>
     <script src="./src/js/bootstrap.js" type="module"></script>
     <script src="./src/js/animejs.js" type="module"></script>
     <script src="./src/js/maplibre.js" type="module"></script>
     <script src="./src/js/zdog.js" type="module"></script>
     <script src="./src/js/tonejs.js" type="module"></script>
- 
-</head>
-<!--grille-->
-<body class="bg-dark text-white">
+    <script src="./src/js/esthetique.js" type="module"></script>
+  </head>
+  <!--grille-->
+  <body class="bg-dark text-white">
+    <div class="grille">
+      <div class="crypto text-center">CRYPTO</div>
+      <div class="stocks text-center">STOCKS</div>
 
-<div class="grille">
+      <div class="balance text-center">BALANCE</div>
+      <div class="graph">
+        GRAPH
+        <canvas id="canvasgraph" class="canvas"></canvas>
+      </div>
+      <div class="data text-center">
+        DATA
+        <div class="progress-bar"></div>
+        <span class="percent">0%</span>
+      </div>
+      <div class="music">
+        <button id="play"><i class="bi bi-play-fill"></i></button>
+        <button id="stop"><i class="bi bi-stop-fill"></i></button>
+      </div>
 
-    <div class="crypto">CRYPTO</div>
-    <div class="stocks">STOCKS</div>
+      <div class="map text-center" id="carte">MAP</div>
+      <div class="visualizer">
+        <canvas class="zdog-canvas"></canvas>
+      </div>
 
-    <div class="balance">BALANCE</div>
-    <div class="graph">GRAPH
-      <canvas class="canvas"></canvas>
+      <!--ajouts esthétiques-->
+      <canvas id="matrix-bg"></canvas>
     </div>
-    <div class="data">DATA</div>
-
-    <div class="music">
-      <button id="play"><i class="bi bi-play-fill"></i></button>
-      <button id="stop"><i class="bi bi-stop-fill"></i></button>
-    </div>
-
-    <div class="map" id="carte">MAP</div>
-    <div class="visualizer">
-      <canvas class="zdog-canvas"></canvas>
-    </div>
-
-</div>
-
-</body>
+  </body>
 </html>
