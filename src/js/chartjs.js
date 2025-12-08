@@ -101,7 +101,7 @@ setInterval(() => {
 for (let ds of graphique.data.datasets) {
 for (let i = 0; i < ds.data.length; i++) {
 const currentY = parseFloat(ds.data[i].y);
-const random = Math.round(Math.random() * 10000 - 5);
+const random = Math.round(Math.random() * 2000 - 1000);
 ds.data[i].y = Math.max(0, currentY + random);
 }
 }

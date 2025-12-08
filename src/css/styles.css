@@ -87,3 +87,9 @@ body {
   border: 1px solid red;
   border-radius: 3%;
 }
+
+.zdog-canvas {
+  border: 1px dotted gray;
+  height: 100%;
+  width: 100%;
+}
